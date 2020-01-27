@@ -1,0 +1,27 @@
+{
+  "name": "mvdh",
+  "version": "1.0.0",
+  "description": "Website for Monta Vista Digital Humanities club",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.html -p 8000",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/richyliu/mvdh.git"
+  },
+  "author": "Richard Liu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/richyliu/mvdh/issues"
+  },
+  "homepage": "https://github.com/richyliu/mvdh#readme",
+  "devDependencies": {
+    "autoprefixer": "^9.7.4",
+    "parcel": "^1.12.4"
+  },
+  "dependencies": {
+    "tailwindcss": "^1.1.4"
+  }
+}

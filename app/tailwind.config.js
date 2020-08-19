@@ -15,6 +15,10 @@ module.exports = {
         },
         secondary: 'var(--color-secondary)',
       },
+      fontFamily: {
+        sans: ['Roboto', 'sans-serif'],
+        compact: ['Oswald', 'sans-serif'],
+      },
     },
   },
   variants: {

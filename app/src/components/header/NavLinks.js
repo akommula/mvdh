@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 
 const NavLink = ({ text, to }) => (
-  <div className="mx-3 md:mx-4 border-b-2 border-transparent hover:text-primary-700 hover:border-primary-600">
+  <div className="mx-3 md:mx-4 border-b-2 border-transparent font-medium hover:border-primary-600">
     <Link to={to}>{text}</Link>
   </div>
 );
@@ -10,10 +10,10 @@ const NavLink = ({ text, to }) => (
 export default function NavLinks() {
   return (
     <div className="flex">
-      <NavLink text="News" to="/" />
+      <NavLink text="News" to="/news" />
       <NavLink text="Resources" to="/" />
+      <NavLink text="Team" to="/" />
       <NavLink text="Contact" to="/" />
-      <NavLink text="About" to="/" />
     </div>
   );
 }

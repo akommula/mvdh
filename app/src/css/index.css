@@ -9,16 +9,6 @@
     --color-primary-800: #2D3748;
     --color-primary-900: #1A202C;
     --color-secondary: #4299E1;
-    /*--color-primary-100: #e1effe;
-    --color-primary-200: #b1d3f4;
-    --color-primary-300: #8abaed;
-    --color-primary-400: #62a7f0;
-    --color-primary-500: #3988e3;
-    --color-primary-600: #2e68b6;
-    --color-primary-700: #1c488b;
-    --color-primary-800: #0c2763;
-    --color-primary-900: #0d1c53;
-    --color-secondary: #ecc94b;*/
 }
 
 @tailwind base;

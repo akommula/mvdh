@@ -11,9 +11,9 @@ export default function NavLinks() {
   return (
     <div className="flex">
       <NavLink text="News" to="/news" />
-      <NavLink text="Resources" to="/" />
-      <NavLink text="Team" to="/" />
-      <NavLink text="Contact" to="/" />
+      <NavLink text="Resources" to="/resources" />
+      <NavLink text="Team" to="/team" />
+      <NavLink text="Contact" to="/contact" />
     </div>
   );
 }

@@ -20,12 +20,12 @@ export default function Footer() {
     <div className="pt-12 pb-12 px-24 bg-primary-100">
       <div className="flex items-stretch mx-auto max-w-3xl mb-4">
         <FooterLink to="/news" text="News" bold />
-        <FooterLink to="/" text="Resources" bold />
+        <FooterLink to="/resources" text="Resources" bold />
         <div className="flex-auto flex items-center justify-center">
           <Logo />
         </div>
-        <FooterLink to="/" text="Team" bold />
-        <FooterLink to="/" text="Contact" bold />
+        <FooterLink to="/team" text="Team" bold />
+        <FooterLink to="/contact" text="Contact" bold />
       </div>
       <hr className="border border-primary-300" />
       <div className="text-center mt-8">

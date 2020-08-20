@@ -9,7 +9,7 @@ export default function ProjectCard({ image, title, link, description }) {
       to={link}
     >
       <img src={image} alt="" className="w-full" />
-      <h3 className="mt-3 leading-snug text-2xl font-light"> {title}</h3>
+      <h3 className="mt-3 leading-tight text-xl"> {title}</h3>
       <p className="leading-snug mt-1">{description}</p>
     </Link>
   );

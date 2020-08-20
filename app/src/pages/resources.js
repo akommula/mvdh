@@ -5,7 +5,7 @@ import ResourcesPage from '../components/resources/ResourcesPage';
 
 export default function Resources() {
   return (
-    <Layout>
+    <Layout title="Resources">
       <ResourcesPage />
     </Layout>
   );

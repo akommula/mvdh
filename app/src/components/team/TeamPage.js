@@ -8,7 +8,7 @@ export default function TeamPage() {
       <h1 className="pb-12 text-5xl font-bold font-compact">
         <span className="border-b-4 border-primary-600">Team</span>
       </h1>
-      <div className="flex flex-row flex-wrap">
+      <div className="">
         <TeamCard
           img="https://via.placeholder.com/192"
           name="Richard Liu"

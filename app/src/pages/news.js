@@ -5,7 +5,7 @@ import NewsPage from '../components/news/NewsPage';
 
 export default function News() {
   return (
-    <Layout>
+    <Layout title="News">
       <NewsPage />
     </Layout>
   );

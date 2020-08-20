@@ -5,7 +5,7 @@ import TeamPage from '../components/team/TeamPage';
 
 export default function Team() {
   return (
-    <Layout>
+    <Layout title="Team">
       <TeamPage />
     </Layout>
   );

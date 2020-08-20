@@ -3,7 +3,15 @@ import React, { useState } from 'react';
 import Slideshow from './Slideshow';
 
 export default function LandingCard() {
+  // whether or not the form is currently shown
   const [showForm, setShowForm] = useState(false);
+  // set to true only once, and that loads the form
+  const [loadForm, setLoadForm] = useState(false);
+
+  function toggleForm() {
+    if (!showForm && !loadForm) setLoadForm(true);
+    setShowForm(!showForm);
+  }
 
   return (
     <div className="mb-56 pt-12 pb-32 px-6 sm:px-16 md:px-24 bg-primary-100">
@@ -18,7 +26,7 @@ export default function LandingCard() {
           <div className="flex-none">
             <button
               className="bg-primary-900 text-primary-100 px-8 py-4 text-lg rounded hover:shadow-lg cursor-pointer transition duration-150"
-              onClick={() => setShowForm(s => !s)}
+              onClick={toggleForm}
             >
               Join our mailing list
             </button>
@@ -52,18 +60,24 @@ export default function LandingCard() {
               maxHeight: showForm ? '500px' : '0px',
             }}
           >
-            <iframe
-              src="https://docs.google.com/forms/d/e/1FAIpQLScxYYiUE9GA7l1Ob1vtu1MsXgrWiqMlYvtpzo7ct8AeG53_aA/viewform?embedded=true"
-              title="Join mailing list"
+            <div
               className="w-full border border shadow-inner rounded"
               style={{
+                height: '500px',
                 backgroundColor: '#F7E5FF',
                 borderColor: '#421473',
-                height: '500px',
               }}
             >
-              Loading…
-            </iframe>
+              {loadForm && (
+                <iframe
+                  src="https://docs.google.com/forms/d/e/1FAIpQLScxYYiUE9GA7l1Ob1vtu1MsXgrWiqMlYvtpzo7ct8AeG53_aA/viewform?embedded=true"
+                  title="Join mailing list"
+                  className="w-full h-full"
+                >
+                  Loading…
+                </iframe>
+              )}{' '}
+            </div>
           </div>
         </div>
         <div className="flex-none">

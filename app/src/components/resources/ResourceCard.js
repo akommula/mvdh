@@ -3,14 +3,18 @@ import React, { useState } from 'react';
 export default function ResourceCard({ embed, title, description, link }) {
   const [loadEmbed, setLoadEmbed] = useState(false);
 
-  const [windowWidth, setWindowWidth] = React.useState(window.innerWidth);
+  // use a default width of 1200px if SSR (server side rendering)
+  const isSSR = typeof window === 'undefined';
+  const [windowWidth, setWindowWidth] = React.useState({
+    width: isSSR ? 1200 : window.innerWidth,
+  });
 
   function changeWindowSize() {
-    console.log(window.innerWidth);
     setWindowWidth(window.innerWidth);
   }
 
   React.useEffect(() => {
+    if (isSSR) return;
     window.addEventListener('resize', changeWindowSize);
     return () => window.removeEventListener('resize', changeWindowSize);
   }, []);
@@ -21,12 +25,12 @@ export default function ResourceCard({ embed, title, description, link }) {
   // original width of the media
   const mediaWidth = 480;
   // if there is enough space to show it all, do not scale down
-  let needTransform = window.innerWidth - paddingWidth * 2 < mediaWidth;
+  let needTransform = windowWidth - paddingWidth * 2 < mediaWidth;
   // transform ratio determined by width of screen
   let transform = needTransform ? (windowWidth - paddingWidth * 2) / 480 : 1;
   // offset needed to correct transform movement
   let offset = needTransform
-    ? mediaWidth / 2 - (window.innerWidth - paddingWidth * 2) / 2
+    ? mediaWidth / 2 - (windowWidth - paddingWidth * 2) / 2
     : 0;
 
   return (

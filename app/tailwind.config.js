@@ -25,4 +25,7 @@ module.exports = {
   variants: {
     borderWidth: ['responsive', 'hover'],
   },
+  future: {
+    removeDeprecatedGapUtilities: true,
+  },
 };

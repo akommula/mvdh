@@ -12,6 +12,7 @@ export default function Layout({ children, title }) {
         <title>{title ? `MVDH | ${title}` : 'MVDH'}</title>
       </Helmet>
       <Header />
+
       <div className="pt-12 md:pt-16 bg-primary-300">
         {children}
         <Footer />

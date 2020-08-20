@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Slideshow() {
   return (
-    <div className="">
+    <div className="mt-8 lg:mt-0">
       <div className="text-center text-lg font-light mb-2">
         Read more about our projects
       </div>

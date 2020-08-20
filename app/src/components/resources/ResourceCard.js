@@ -3,17 +3,57 @@ import React, { useState } from 'react';
 export default function ResourceCard({ embed, title, description, link }) {
   const [loadEmbed, setLoadEmbed] = useState(false);
 
+  const [windowWidth, setWindowWidth] = React.useState(window.innerWidth);
+
+  function changeWindowSize() {
+    console.log(window.innerWidth);
+    setWindowWidth(window.innerWidth);
+  }
+
+  React.useEffect(() => {
+    window.addEventListener('resize', changeWindowSize);
+    return () => window.removeEventListener('resize', changeWindowSize);
+  }, []);
+
+  /* Scale the media (slideshow/video) to the correct size */
+  // width of one side of padding from the edge of screen to the media
+  const paddingWidth = 12;
+  // original width of the media
+  const mediaWidth = 480;
+  // if there is enough space to show it all, do not scale down
+  let needTransform = window.innerWidth - paddingWidth * 2 < mediaWidth;
+  // transform ratio determined by width of screen
+  let transform = needTransform ? (windowWidth - paddingWidth * 2) / 480 : 1;
+  // offset needed to correct transform movement
+  let offset = needTransform
+    ? mediaWidth / 2 - (window.innerWidth - paddingWidth * 2) / 2
+    : 0;
+
   return (
     <div
       className="flex-none mb-6 bg-primary-100 rounded shadow mr-6 overflow-hidden"
-      style={{ width: '480px' }}
+      style={{
+        maxWidth: '480px',
+        transform: `scale(${transform})`,
+        marginLeft: `-${offset}.px`,
+      }}
     >
-      <div className="flex-none" style={{ width: '480px', height: '299px' }}>
+      <div
+        className="flex-none"
+        style={{
+          width: '480px',
+          height: '299px',
+        }}
+      >
         <div className="relative h-full">
           <div className="z-10 absolute h-full w-full">
             {loadEmbed ? (
               embed && embed.length > 0 ? (
-                <div dangerouslySetInnerHTML={{ __html: embed }} />
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: embed,
+                  }}
+                />
               ) : (
                 <img
                   src="https://via.placeholder.com/480x299?Missing+embed"
@@ -43,7 +83,12 @@ export default function ResourceCard({ embed, title, description, link }) {
               </div>
             )}
           </div>
-          <div className="absolute top-0 left-0 w-full h-full">
+          <div
+            className="absolute top-0 left-0 w-full h-full"
+            style={{
+              zIndex: '-10',
+            }}
+          >
             <div className="flex justify-center items-center w-full h-full">
               <svg
                 aria-hidden="true"

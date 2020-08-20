@@ -5,7 +5,7 @@ import Logo from './header/Logo';
 const FooterLink = ({ to, text, bold }) => (
   <div
     className={
-      'flex-auto flex items-center justify-center text-sm ' +
+      'flex-auto flex items-center justify-center text-sm my-3 ' +
       (bold ? 'font-bold' : '')
     }
   >
@@ -17,11 +17,11 @@ const FooterLink = ({ to, text, bold }) => (
 
 export default function Footer() {
   return (
-    <div className="pt-12 pb-12 px-24 bg-primary-100">
-      <div className="flex items-stretch mx-auto max-w-3xl mb-4">
+    <div className="pt-12 pb-12 px-12 sm:px-24 bg-primary-100">
+      <div className="flex flex-col sm:flex-row flex-wrap items-stretch mx-auto max-w-3xl mb-4">
         <FooterLink to="/news" text="News" bold />
         <FooterLink to="/resources" text="Resources" bold />
-        <div className="flex-auto flex items-center justify-center">
+        <div className="flex-auto flex items-center justify-center my-3">
           <Logo />
         </div>
         <FooterLink to="/team" text="Team" bold />

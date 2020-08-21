@@ -4,9 +4,8 @@ export default function ResourceCard({ embed, title, description, link }) {
   const [loadEmbed, setLoadEmbed] = useState(false);
 
   // use a default width of 1200px if SSR (server side rendering)
-  const isSSR = typeof window === 'undefined';
   const [windowWidth, setWindowWidth] = React.useState({
-    width: isSSR ? 1200 : window.innerWidth,
+    width: typeof window === 'undefined' ? 1200 : window.innerWidth,
   });
 
   function changeWindowSize() {
@@ -14,7 +13,7 @@ export default function ResourceCard({ embed, title, description, link }) {
   }
 
   React.useEffect(() => {
-    if (isSSR) return;
+    if (typeof window === 'undefined') return;
     window.addEventListener('resize', changeWindowSize);
     return () => window.removeEventListener('resize', changeWindowSize);
   }, []);
@@ -35,7 +34,7 @@ export default function ResourceCard({ embed, title, description, link }) {
 
   return (
     <div
-      className="flex-none mb-6 bg-primary-100 rounded shadow mr-6 overflow-hidden"
+      className="flex-none mb-12 mr-12 bg-primary-100 rounded shadow overflow-hidden"
       style={{
         maxWidth: '480px',
         transform: `scale(${transform})`,

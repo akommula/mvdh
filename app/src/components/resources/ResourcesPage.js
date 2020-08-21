@@ -3,7 +3,7 @@ import ResourceCard from './ResourceCard';
 
 export default function ResourcesPage() {
   return (
-    <div className="max-w-6xl py-16 px-3 sm:px-12 mx-auto">
+    <div className="max-w-xl lg:max-w-6xl py-16 px-3 sm:px-12 mx-auto">
       <h1 className="pb-12 text-5xl font-bold font-compact">
         <span className="border-b-4 border-primary-600">Resources</span>
       </h1>

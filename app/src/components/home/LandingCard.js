@@ -40,8 +40,6 @@ export default function LandingCard() {
               rel="noopener noreferrer"
             >
               <svg
-                aria-hidden="true"
-                focusable="false"
                 role="img"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 512 512"
@@ -76,7 +74,7 @@ export default function LandingCard() {
                 >
                   Loading…
                 </iframe>
-              )}{' '}
+              )}
             </div>
           </div>
         </div>

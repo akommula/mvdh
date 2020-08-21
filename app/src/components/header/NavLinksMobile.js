@@ -40,7 +40,7 @@ export default function NavLinksMobile() {
       >
         <button
           className={
-            'flex-auto transition duration-300 ' +
+            'flex-auto text-transparent transition duration-300 ' +
             (showNav ? 'opacity-100 cursor-default' : 'opacity-0')
           }
           style={{
@@ -48,7 +48,9 @@ export default function NavLinksMobile() {
             WebkitBackdropFilter: 'blur(8px)',
           }}
           onClick={() => setShowNav(false)}
-        />
+        >
+          Exit
+        </button>
         <div
           className="flex-none flex flex-col overflow-y-hidden transition-all duration-300 rounded-bl-lg"
           style={{

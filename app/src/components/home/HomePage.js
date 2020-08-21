@@ -2,7 +2,7 @@ import React from 'react';
 
 import LandingCard from './LandingCard';
 import ExplainCard from './ExplainCard';
-import CurriculumCard from './ExamplesCard';
+import ExamplesCard from './ExamplesCard';
 import ObjectivesCard from './ObjectivesCard';
 import WhoCard from './WhoCard';
 
@@ -13,7 +13,7 @@ export default function HomePage() {
       <ExplainCard />
       <WhoCard />
       <ObjectivesCard />
-      <CurriculumCard />
+      <ExamplesCard />
     </>
   );
 }

@@ -29,6 +29,13 @@ module.exports = {
         path: `${__dirname}/src/assets/`,
       },
     },
+    {
+      resolve: 'gatsby-source-google-spreadsheets',
+      options: {
+        spreadsheetId: '1udpjEu0hQhlEmSb0d92PwAiI8H-JYgM8Dk8mO9Bdt6A',
+        credentials: require('./src/assets/client_secret.json'),
+      },
+    },
     'gatsby-plugin-react-helmet',
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,

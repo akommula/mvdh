@@ -1,6 +1,7 @@
 import React from 'react';
 
 import TeamCard from './TeamCard';
+import { graphql, StaticQuery } from 'gatsby';
 
 export default function TeamPage() {
   return (
@@ -9,41 +10,22 @@ export default function TeamPage() {
         <span className="border-b-4 border-primary-600">Team</span>
       </h1>
       <div className="">
-        <TeamCard
-          img="https://via.placeholder.com/192"
-          name="Richard Liu"
-          job="Webmaster"
-          description="Richard is a senior at Monta Vista High School Richard is a senior at Monta Vista High School Richard is a senior at Monta Vista High School"
-        />
-        <TeamCard
-          img="https://via.placeholder.com/192"
-          name="Richard Liu"
-          job="Webmaster"
-          description="Richard is a senior at Monta Vista High School"
-        />
-        <TeamCard
-          img="https://via.placeholder.com/192"
-          name="Richard Liu"
-          job="Webmaster"
-          description="Richard is a senior at Monta Vista High School"
-        />
-        <TeamCard
-          img="https://via.placeholder.com/192"
-          name="Richard Liu"
-          job="Webmaster"
-          description="Richard is a senior at Monta Vista High School"
-        />
-        <TeamCard
-          img="https://via.placeholder.com/192"
-          name="Richard Liu"
-          job="Webmaster"
-          description="Richard is a senior at Monta Vista High School"
-        />
-        <TeamCard
-          img="https://via.placeholder.com/192"
-          name="Richard Liu"
-          job="Webmaster"
-          description="Richard is a senior at Monta Vista High School"
+        <StaticQuery
+          query={graphql`
+            query {
+              googleSheet {
+                Team {
+                  name
+                  job
+                  description
+                  image
+                }
+              }
+            }
+          `}
+          render={data =>
+            data.googleSheet.Team.map(t => <TeamCard key={t.name} {...t} />)
+          }
         />
       </div>
     </div>

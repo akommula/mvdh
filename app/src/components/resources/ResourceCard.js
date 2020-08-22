@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export default function ResourceCard({ embed, title, description, link }) {
+export default function ResourceCard({ title, description, embed, link }) {
   const [loadEmbed, setLoadEmbed] = useState(false);
 
   // use a default width of 1200px if SSR (server side rendering)
@@ -64,7 +64,10 @@ export default function ResourceCard({ embed, title, description, link }) {
                 />
               )
             ) : (
-              <div className="h-full bg-primary-700 flex justify-center items-center">
+              <div
+                className="h-full flex justify-center items-center"
+                style={{ backgroundColor: 'rgb(33, 39, 41)' }}
+              >
                 <button onClick={() => setLoadEmbed(true)}>
                   <svg
                     aria-hidden="true"

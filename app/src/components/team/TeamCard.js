@@ -1,11 +1,11 @@
 import React from 'react';
 
-export default function TeamCard({ img, name, job, description }) {
+export default function TeamCard({ image, name, job, description }) {
   return (
     <div className="flex-auto flex flex-row items-stretch mb-8 bg-primary-100 rounded-lg shadow">
       <div className="flex-none h-full rounded-full p-3">
         <img
-          src={img}
+          src={image}
           alt={`Profile of ${name}`}
           className="rounded-full h-full h-48 w-48 border-8 border-primary-200"
         />

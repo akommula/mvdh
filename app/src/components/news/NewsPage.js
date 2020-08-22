@@ -1,5 +1,6 @@
 import React from 'react';
 import NewsCard from './NewsCard';
+import { graphql, StaticQuery } from 'gatsby';
 
 export default function HomePage() {
   return (
@@ -8,20 +9,21 @@ export default function HomePage() {
         <span className="border-b-4 border-primary-600">News</span>
       </h1>
       <div className="my-4">
-        <NewsCard
-          title="Example blog post"
-          description="This is an example blog post with an interesting description that is somewhat long. This is an example blog post with an interesting description that is somewhat long. This is an example blog post with an interesting description that is somewhat long. This is an example blog post with an interesting description that is somewhat long. "
-          date="January 1, 2025"
-        />
-        <NewsCard
-          title="Example blog post"
-          description="This is an example blog post with an interesting description that is somewhat long."
-          date="January 1, 2025"
-        />
-        <NewsCard
-          title="Example blog post"
-          description="This is an example blog post with an interesting description that is somewhat long."
-          date="January 1, 2025"
+        <StaticQuery
+          query={graphql`
+            query {
+              googleSheet {
+                News {
+                  title
+                  description
+                  date
+                }
+              }
+            }
+          `}
+          render={data =>
+            data.googleSheet.News.map(r => <NewsCard key={r.title} {...r} />)
+          }
         />
       </div>
     </div>

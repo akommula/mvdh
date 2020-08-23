@@ -5,14 +5,15 @@
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
+    "build": "export GOOGLE_CREDENTIALS=$(cat client_secret.json) && gatsby build",
     "develop": "gatsby develop -H 0.0.0.0",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "start": "npm run develop",
+    "start": "export GOOGLE_CREDENTIALS=$(cat client_secret.json) && npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "deploy-test": "surge public/ mvdh-test.surge.sh"
+    "deploy-test": "surge public/ https://mvdh-test.surge.sh",
+    "deploy-prod": "surge public/ mvdh.club"
   },
   "dependencies": {
     "autoprefixer": "^9.8.6",

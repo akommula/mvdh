@@ -12,8 +12,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "deploy-test": "surge public/ https://mvdh-test.surge.sh",
-    "deploy-prod": "surge public/ mvdh.club"
+    "deploy-test": "surge public/ https://mvdh-test.surge.sh"
   },
   "dependencies": {
     "autoprefixer": "^9.8.6",

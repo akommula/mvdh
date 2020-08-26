@@ -12,7 +12,7 @@ export default function Layout({ children, title }) {
         <title>{title ? `MVDH | ${title}` : 'MVDH'}</title>
         <meta
           name="description"
-          content="Monta Vista Digital Humanities Club hosts meetings every Tuesday in Room A204 (or online). Digital Humanities is a rising interdisciplinary field based on the study of art, culture, literature, etc. using modern digital tools."
+          content="Monta Vista Digital Humanities is a club dedicated to Digital Humanities: a rising interdisciplinary field based on the study of art, culture, literature, etc. using modern digital tools."
         />
         <meta
           name="viewport"
@@ -26,7 +26,7 @@ export default function Layout({ children, title }) {
         />
         <meta
           property="og:description"
-          content="MVDH meets every Tuesday in Room A204 (or online). Digital Humanities is a rising interdisciplinary field based on the study of art, culture, literature, etc. using modern digital tools."
+          content="MVDH meets every other Thursday at 11:15 AM online. Digital Humanities is a rising interdisciplinary field based on the study of art, culture, literature, etc. using modern digital tools."
         />
 
         <link

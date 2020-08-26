@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function TeamCard({ image, name, job, description }) {
   return (
-    <div className="flex-auto flex flex-row items-stretch mb-8 bg-primary-100 rounded-lg shadow">
+    <div className="flex-auto flex flex-row items-center mb-8 bg-primary-100 rounded-lg shadow">
       <div className="flex-none h-full rounded-full p-3">
         <img
           src={image}
@@ -15,7 +15,7 @@ export default function TeamCard({ image, name, job, description }) {
           {name}
         </h2>
         <h3 className="text-primary-700 font-light text-sm">{job}</h3>
-        <p className="mt-2 text-sm leading-tight sm:leading-snug">
+        <p className="my-2 text-sm leading-tight sm:leading-snug">
           {description}
         </p>
       </div>

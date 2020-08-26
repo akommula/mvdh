@@ -182,7 +182,7 @@ export default function Slideshow() {
   return (
     <div className="mt-8 lg:mt-0">
       <div className="text-center text-lg font-light mb-2">
-        Read more about our projects
+        Projects we will discuss this year:
       </div>
 
       <WithImageData withImageData={imgData => <Slides imgData={imgData} />} />

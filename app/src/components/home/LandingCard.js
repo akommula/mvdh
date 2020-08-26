@@ -21,7 +21,7 @@ export default function LandingCard() {
             <h1 className="text-5xl font-medium leading-tight mb-4">
               Monta Vista Digital Humanities
             </h1>
-            <h2 className="text-2xl">Every other Tuesday at lunch in A204</h2>
+            <h2 className="text-2xl">Every other Thursday at lunch in A204</h2>
           </div>
           <div className="flex-none">
             <button
@@ -52,6 +52,10 @@ export default function LandingCard() {
               </svg>
             </a>
           </div>
+          <p className="flex-none my-2 max-w-sm text-sm text-primary-800">
+            Join our mailing list to receive updates on club info and upcoming
+            meetings!
+          </p>
           <div
             className="mt-12 transition-all duration-700 ease-in-out overflow-hidden"
             style={{

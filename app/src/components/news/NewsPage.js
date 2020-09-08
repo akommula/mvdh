@@ -22,7 +22,7 @@ export default function HomePage() {
             }
           `}
           render={data =>
-            data.googleSheet.News.map(r => <NewsCard key={r.title} {...r} />)
+            data.googleSheet.News.reverse().map(r => <NewsCard key={r.title} {...r} />)
           }
         />
       </div>

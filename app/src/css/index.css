@@ -8,7 +8,7 @@
     --color-primary-700: #4A5568;
     --color-primary-800: #2D3748;
     --color-primary-900: #1A202C;
-    --color-secondary: #4299E1;
+    --color-secondary: #3b8fd3;
 }
 
 @tailwind base;
@@ -18,4 +18,11 @@
 html, body {
     margin: 0;
     height: 100%;
+}
+
+.markdown a {
+  @apply text-secondary border-b border-transparent transition duration-100;
+}
+.markdown a:hover {
+  @apply border-secondary;
 }

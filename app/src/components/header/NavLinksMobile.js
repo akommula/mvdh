@@ -78,6 +78,7 @@ export default function NavLinksMobile() {
             </button>
           </div>
           <NavLink text="News" to="/news" />
+          <NavLink text="Speakers" to="/speakers" />
           <NavLink text="Resources" to="/resources" />
           <NavLink text="Team" to="/team" />
           <NavLink text="Contact" to="/contact" />

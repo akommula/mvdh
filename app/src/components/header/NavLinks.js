@@ -13,6 +13,7 @@ export default function NavLinks() {
   return (
     <div className="flex flex-row">
       <NavLink text="News" to="/news" />
+      <NavLink text="Speakers" to="/speakers" />
       <NavLink text="Resources" to="/resources" />
       <NavLink text="Team" to="/team" />
       <NavLink text="Contact" to="/contact" />

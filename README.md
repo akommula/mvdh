@@ -18,5 +18,5 @@ service account and create a new key. Store the credentials in
 `app/client_secret.json` (so it is gitignored) and run
 
 ```zsh
-export GOOGLE_APPLICATION_CREDENTIALS=client_secret.json
+export GOOGLE_APPLICATION_CREDENTIALS=$(cat client_secret.json)
 ```

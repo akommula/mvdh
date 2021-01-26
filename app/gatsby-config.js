@@ -8,21 +8,6 @@ module.exports = {
   plugins: [
     'gatsby-plugin-postcss',
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
-      options: {
-        fonts: [
-          {
-            family: 'Roboto',
-            variants: ['300', '300i', '400', '500', '700'],
-          },
-          {
-            family: 'Oswald',
-            variants: ['500', '700'],
-          },
-        ],
-      },
-    },
-    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `assets`,

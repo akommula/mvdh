@@ -29,7 +29,7 @@ export default function Footer() {
       </div>
       <hr className="border border-primary-300" />
       <div className="text-center mt-8">
-        &copy; 2020 Monta Vista Digital Humanities Club. All rights reserved.
+        &copy; 2020 - 2021 Monta Vista Digital Humanities Club. All rights reserved.
       </div>
       <StaticQuery
         query={graphql`

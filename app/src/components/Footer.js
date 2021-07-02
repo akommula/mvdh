@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql, Link, StaticQuery } from 'gatsby';
+import { Link } from 'gatsby';
 import Logo from './header/Logo';
 
 const FooterLink = ({ to, text, bold }) => (
@@ -31,20 +31,6 @@ export default function Footer() {
       <div className="text-center mt-8">
         &copy; 2020 - 2021 Monta Vista Digital Humanities Club. All rights reserved.
       </div>
-      <StaticQuery
-        query={graphql`
-          query {
-            currentBuildDate {
-              currentDate
-            }
-          }
-        `}
-        render={data => (
-          <div className="text-center mt-4 text-primary-700">
-            Site last updated on {data.currentBuildDate.currentDate}
-          </div>
-        )}
-      />
     </div>
   );
 }

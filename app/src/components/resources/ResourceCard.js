@@ -51,12 +51,8 @@ export default function ResourceCard({ title, description, embed, link }) {
         <div className="relative h-full">
           <div className="z-10 absolute h-full w-full">
             {loadEmbed ? (
-              embed && embed.length > 0 ? (
-                <div
-                  dangerouslySetInnerHTML={{
-                    __html: embed,
-                  }}
-                />
+              embed ? (
+                embed
               ) : (
                 <img
                   src="https://via.placeholder.com/480x299?Missing+embed"

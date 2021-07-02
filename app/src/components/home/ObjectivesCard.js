@@ -1,6 +1,5 @@
 import React from 'react';
-import { graphql, StaticQuery } from 'gatsby';
-import Img from 'gatsby-image/index';
+import { StaticImage } from 'gatsby-plugin-image';
 
 export default function ObjectivesCard() {
   return (
@@ -16,25 +15,13 @@ export default function ObjectivesCard() {
           popular tools for research.
         </p>
       </div>
-      <StaticQuery
-        query={graphql`
-          query {
-            file(relativePath: { eq: "images/data_process_flowchart.png" }) {
-              childImageSharp {
-                fluid(maxWidth: 1024) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
-        `}
-        render={data => (
-          <Img
-            fluid={data.file.childImageSharp.fluid}
-            className="mx-auto max-w-screen-lg"
-          />
-        )}
-      />
+      <div className="mx-auto max-w-screen-lg">
+        <StaticImage
+          src="../../assets/images/data_process_flowchart.png"
+          alt="Flowchart of data analysis process"
+          width={1024}
+        />
+      </div>
     </div>
   );
 }

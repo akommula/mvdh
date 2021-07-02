@@ -1,66 +1,5 @@
 import React, { useState } from 'react';
-import { graphql, StaticQuery } from 'gatsby';
-import Img from 'gatsby-image/index';
-
-const WithImageData = ({ withImageData }) => (
-  <StaticQuery
-    query={graphql`
-      query {
-        neural_neighbors: file(
-          relativePath: { eq: "images/neural_neighbors.png" }
-        ) {
-          childImageSharp {
-            fixed(width: 400) {
-              ...GatsbyImageSharpFixed
-            }
-          }
-        }
-        josquin: file(relativePath: { eq: "images/josquin.png" }) {
-          childImageSharp {
-            fixed(width: 400) {
-              ...GatsbyImageSharpFixed
-            }
-          }
-        }
-        mary: file(relativePath: { eq: "images/mary.png" }) {
-          childImageSharp {
-            fixed(width: 400) {
-              ...GatsbyImageSharpFixed
-            }
-          }
-        }
-      }
-    `}
-    render={data =>
-      withImageData([
-        {
-          img: <Img fixed={data.neural_neighbors.childImageSharp.fixed} />,
-          title: 'Neural Neighbors',
-          description:
-            'Neural Neighbors combines these two data-mining techniques to illuminate the conventions of portraiture and other visual genres in the 19th century. Neural Neighbors suggests new ways of understanding this interaction between circulation, social context, and artistic form in the Meserve-Kunhardt Collection.',
-          link:
-            'https://docs.google.com/presentation/d/1O6b5V85dtGVmHNQ0h-mEGl6IOsmjF9bfjb-UlpZVGb0/edit?usp=sharing',
-        },
-        {
-          img: <Img fixed={data.josquin.childImageSharp.fixed} />,
-          title: 'Josquin Research Project',
-          description:
-            'Josquin Research Project makes music of Josquin des Prez searchable through digitization to enable comparative analysis',
-          link:
-            'https://docs.google.com/presentation/d/1hwMHLEedJeGVEybq7ppDofKmwcTFwI1Rf3BwwK-2xpY/edit?usp=sharing',
-        },
-        {
-          img: <Img fixed={data.mary.childImageSharp.fixed} />,
-          title: 'Exploring Medieval Mary Magdalene',
-          description:
-            'An online collection of digital editions containing a late medieval legend of Mary Magdalene’s conversion, preserved in both Latin and various vernacular manuscripts.',
-          link:
-            'https://docs.google.com/presentation/d/1P9rUvHdW_cFKDrsUmLyAyq9a6Qw_ssz8XMBNL49E1HI/edit?usp=sharing',
-        },
-      ])
-    }
-  />
-);
+import { StaticImage } from 'gatsby-plugin-image';
 
 function Slides({ imgData }) {
   const [curImg, setCurImg] = useState(0);
@@ -93,9 +32,9 @@ function Slides({ imgData }) {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <h4 className="text-xl font-medium">{imgData[curImg].title}</h4>
+              <h4 className="py-1 text-xl font-medium">{imgData[curImg].title}</h4>
             </a>
-            <p className="leading-tight font-light">
+            <p className="leading-tight font-light text-sm">
               {imgData[curImg].description}
             </p>
           </div>
@@ -114,7 +53,6 @@ function Slides({ imgData }) {
               <path
                 fill="currentColor"
                 d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z"
-                className=""
               />
             </svg>
           </button>
@@ -133,7 +71,6 @@ function Slides({ imgData }) {
               <path
                 fill="currentColor"
                 d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"
-                className=""
               />
             </svg>
           </button>
@@ -185,7 +122,55 @@ export default function Slideshow() {
         Projects we will discuss this year:
       </div>
 
-      <WithImageData withImageData={imgData => <Slides imgData={imgData} />} />
+      <Slides
+        imgData={[
+          {
+            img: (
+              <StaticImage
+                src="../../assets/images/neural_neighbors.png"
+                alt="Collage of historic photos"
+                width={400}
+                height={400}
+              />
+            ),
+            title: 'Neural Neighbors',
+            description:
+              'Neural Neighbors combines these two data-mining techniques to illuminate the conventions of portraiture and other visual genres in the 19th century. Neural Neighbors suggests new ways of understanding this interaction between circulation, social context, and artistic form in the Meserve-Kunhardt Collection.',
+            link:
+              'https://docs.google.com/presentation/d/1O6b5V85dtGVmHNQ0h-mEGl6IOsmjF9bfjb-UlpZVGb0/edit?usp=sharing',
+          },
+          {
+            img: (
+              <StaticImage
+                src="../../assets/images/josquin.png"
+                alt="Historic sheet music"
+                width={400}
+                height={400}
+              />
+            ),
+            title: 'Josquin Research Project',
+            description:
+              'Josquin Research Project makes music of Josquin des Prez searchable through digitization to enable comparative analysis',
+            link:
+              'https://docs.google.com/presentation/d/1hwMHLEedJeGVEybq7ppDofKmwcTFwI1Rf3BwwK-2xpY/edit?usp=sharing',
+          },
+          {
+            img: (
+              <StaticImage
+                src="../../assets/images/mary.png"
+                alt="Painting of Mary Magdalene"
+                width={400}
+                height={400}
+              />
+            ),
+            title: 'Exploring Medieval Mary Magdalene',
+            description:
+              'An online collection of digital editions containing a late medieval legend of Mary Magdalene’s conversion, preserved in both Latin and various vernacular manuscripts.',
+            link:
+              'https://docs.google.com/presentation/d/1P9rUvHdW_cFKDrsUmLyAyq9a6Qw_ssz8XMBNL49E1HI/edit?usp=sharing',
+          },
+        ]}
+      />
     </div>
   );
 }

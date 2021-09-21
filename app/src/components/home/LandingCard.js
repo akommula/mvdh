@@ -21,7 +21,7 @@ export default function LandingCard() {
             <h1 className="text-5xl font-medium leading-tight mb-4">
               Monta Vista Digital Humanities
             </h1>
-            <h2 className="text-2xl">Every other Thursday at lunch in A202</h2>
+            <h2 className="text-2xl">Every other Thursday at lunch in A 202</h2>
           </div>
           <div className="flex-none">
             <button

@@ -6,7 +6,7 @@ import HomePage from '../components/home/HomePage';
 export default function Home() {
   return (
     <Layout title="Home">
-      <Home Page />
+      <HomePage />
     </Layout>
   );
 }
